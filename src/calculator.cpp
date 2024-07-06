@@ -35,7 +35,7 @@ bool valid_operation( char operation ) {
 // 
 /////////////////////////////////////////////////////////////////
 void calculator ( ) {
-    std::cout << "\n***Calculator***" << std::endl;  
+    std::cout << "\n****Calculator****" << std::endl;  
     
     char operation;
     while (true) {
