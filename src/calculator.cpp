@@ -12,13 +12,13 @@
 //  Function valid_operation
 //      Discription:    Validates for valid math operation 
 //
-//      Params: char operation ( Valid operations + - / * )
+//      Params: char operation ( Valid operations + - / * ^ )
 //
 //      Return: true if operation is valid                                   
 // 
 /////////////////////////////////////////////////////////////////
 bool valid_operation( char operation ) {
-    if ( ( operation == '/') || ( operation == '*') || ( operation == '+') || ( operation == '-') ) {
+    if ( ( operation == '/') || ( operation == '*') || ( operation == '+') || ( operation == '-') || ( operation == '^') ) {
         return true;
     }
     return false;
@@ -39,7 +39,7 @@ void calculator ( ) {
     
     char operation;
     while (true) {
-        std::cout << "\nChoose Mathematical operation * / + -" << std::endl;
+        std::cout << "\nChoose Mathematical operation * / + - ^" << std::endl;
         std::cout << "Choose Q to Quit" << std::endl;
 
         std::cin >> operation;
@@ -76,6 +76,35 @@ void calculator ( ) {
                 std::cout << "\n" << intVal_1 << " / " << intVal_2 << " = " << DivData.quotient << " With remainder " << DivData.remainder << std::endl;
                 continue;
             } 
+        }
+
+        if ( operation == '^' ) {
+            int intVal, powerOf;
+            Stack<int> intStack(20);
+            std::cout << "\nEnter Number " << std::endl;
+            if ( intVal < 1 ) {
+                std::cout << "invalid Number, Number must be greater than 0" << std::endl;
+                continue;
+            }
+            std::cin >> intVal;
+            intStack.push( intVal );
+
+            std::cout << "\nEnter to the power of " << std::endl;
+            std::cin >> powerOf;
+            if ( powerOf < 1 ) {
+                std::cout << "invalid power, power must be greater than 0" << std::endl;
+                continue;
+            }
+            intStack.push( powerOf );
+
+            int finalVal = intVal;
+                
+            for (int i = 1; i < powerOf; ++i ) {
+                finalVal*=intVal;
+            }
+            std::cout << "\n" << intVal << " to the power of " << powerOf << " = " << finalVal << std::endl;
+            continue;
+        
         }
         
         Stack<float> stack(20);
