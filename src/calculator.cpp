@@ -12,7 +12,7 @@
 //  Function valid_operation
 //      Discription:    Validates for valid math operation 
 //
-//      Params: char operation ( Valid operations + - / * )
+//      Params: char operation ( Valid operations + - / * ^ )
 //
 //      Return: true if operation is valid                                   
 // 
