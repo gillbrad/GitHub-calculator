@@ -52,7 +52,7 @@ void calculator ( ) {
             // Set error condition to Invalid Argument and throw Error 
             throw(std::invalid_argument("Invalid Math Operation")); 
         }
-        
+        // Divide with remainder operation
         if ( operation == '/' ) {
             char rDiv;
             int intVal_1, intVal_2;
